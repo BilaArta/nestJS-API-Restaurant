@@ -1,31 +1,22 @@
-import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-import {Document} from 'mongoose';
+/* eslint-disable prettier/prettier */
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
 export type UserDocument = User & Document;
 
 @Schema()
-export class User{
-    @Prop()
-    name: string;
-    
-    @Prop()
-    username: string;
+export class User {
+  @Prop()
+  name: string;
 
-    @Prop()
-    email: string;
+  @Prop()
+  username: string;
 
-    @Prop()
-    password: string;
+  @Prop()
+  email: string;
 
+  @Prop()
+  password: string;
 }
 
-export class Menu{
-    @Prop()
-    foodName: string;
-    
-    @Prop()
-    price: number;
-}
-
-
-export const UserSchema = SchemaFactory.createForClass(User)
+export const UserSchema = SchemaFactory.createForClass(User);
