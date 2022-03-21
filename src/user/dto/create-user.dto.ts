@@ -9,7 +9,6 @@ export class CreateUserDto {
     password: string;
 }
 
-
 export class FindOneParams {
     @IsNumberString()
     id: number;
