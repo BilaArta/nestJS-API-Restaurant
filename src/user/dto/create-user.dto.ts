@@ -10,6 +10,9 @@ export class CreateUserDto {
 }
 
 export class FindOneParams {
+    @IsFoodName()
+    foodName: string;
+
     @IsNumberString()
     id: number;
 }
