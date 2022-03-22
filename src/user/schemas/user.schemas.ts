@@ -16,16 +16,6 @@ export class User{
 
     @Prop()
     password: string;
-
 }
-
-export class Menu{
-    @Prop()
-    foodName: string;
-    
-    @Prop()
-    price: number;
-}
-
 
 export const UserSchema = SchemaFactory.createForClass(User)

@@ -9,15 +9,6 @@ export class CreateUserDto {
     password: string;
 }
 
-export class CreateMenuDto {
-    @IsfoodName()
-    foodName: string;
-
-    @Isprice()
-    price: number;
-
-}
-
 export class FindOneParams {
     @IsNumberString()
     id: number;
