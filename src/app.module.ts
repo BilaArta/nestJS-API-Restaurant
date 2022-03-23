@@ -8,7 +8,8 @@ import { TransactionModule } from './transaction/transaction.module';
   imports: 
   [
     UserModule, 
-    MongooseModule.forRoot('mongodb+srv://admin:admin@cluster0.oxea7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'), TransactionModule
+    TransactionModule,
+    MongooseModule.forRoot('mongodb+srv://admin:admin@cluster0.oxea7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
   ],
 })
 export class AppModule {}

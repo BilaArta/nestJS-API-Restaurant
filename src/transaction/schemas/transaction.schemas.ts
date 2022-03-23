@@ -20,7 +20,7 @@ export class Transaction{
     user: User;
 
     @Prop()
-    createdAt: Date;
+    createdAt?: Date;
 
     @Prop()
     prices: number;
