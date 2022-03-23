@@ -7,9 +7,10 @@ import { ProductModule } from './product/product.module';
 @Module({
   imports: 
   [
-    UserModule, 
-    MongooseModule.forRoot('mongodb+srv://admin:admin@cluster0.oxea7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'), TransactionModule,
-    MongooseModule.forRoot('mongodb+srv://admin:admin@cluster0.oxea7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'), ProductModule,
+    UserModule,
+    TransactionModule,
+    ProductModule,
+    MongooseModule.forRoot('mongodb+srv://admin:admin@cluster0.oxea7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'), 
   ],
 })
 export class AppModule {}

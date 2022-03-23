@@ -1,6 +1,7 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import * as mongoose from 'mongoose';
-import {Document, Model} from 'mongoose';
+import {Document} from 'mongoose';
+
 import {User} from "../../user/schemas/user.schemas"
 
 export type TransactionDocument = Transaction & Document;
@@ -13,14 +14,19 @@ export class Transaction{
     @Prop()
     idUser: number;
 
-    @Prop()
+    @Prop({type: mongoose.Schema.Types.ObjectId, ref: 'Product'})
     orderProductsId: [string];
 
-    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
-    user: User;
+    @Prop({ type: User, ref: 'User' })
+    user: {
+        type: User,
+        _id: {
+            type: mongoose.Schema.Types.ObjectId, ref: 'User'       
+        }
+    }
 
     @Prop()
-    createdAt: Date;
+    createdAt?: Date;
 
     @Prop()
     prices: number;
@@ -42,5 +48,9 @@ export const TransactionSchema = SchemaFactory.createForClass(Transaction);
 //         this.findOne({'_id':id})
 //     });
 // })
+
+TransactionSchema.method('getCustomers', (idCustomers) => {
+    return idCustomers
+})
 
 
