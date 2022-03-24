@@ -6,7 +6,6 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from "mongoose";
 import {Transaction, TransactionDocument} from "./schemas/transaction.schemas"
 
-
 @Injectable()
 export class TransactionService {
   constructor(@InjectModel(Transaction.name) private transactionModel: Model<TransactionDocument>) {}
